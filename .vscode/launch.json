@@ -7,22 +7,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Mocha Tests",
-      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "--no-timeouts",
-        "--trace-warnings",
-        "'test/unit/*.test.js'",
-        "'test/it/*.test.js'",
-        "'test/e2e/*.test.js'"
-      ],
-      "env": {
-        "DEBUG": "applitools:${workspaceFolderBasename}*"
-      },
-      "cwd": "${workspaceRoot}",
-      "protocol": "inspector",
-      "console": "integratedTerminal",
-      "showAsyncStacks": true
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/src/ff68-scrollbarwidth-regression.js"
     }
+
   ]
 }

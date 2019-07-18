@@ -13,6 +13,7 @@
     "access": "restricted"
   },
   "scripts": {
+    "test:compose": "docker-compose -p ff68-bug kill; docker-compose -p ff68-bug up -d && npm start",
     "test": "docker rm -fv firefox-headless; docker run --name firefox-headless -p 4444:4444 -d selenium/standalone-firefox && npm start",
     "start": "node src/ff68-scrollbarwidth-regression.js",
     "eslint": "eslint '**/*.js'"
@@ -44,6 +45,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "mocha": "^6.1.4",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "serve": "^11.1.0"
   }
 }

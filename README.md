@@ -1,45 +1,29 @@
 # ff68-scrollbarwidth-regression
 
-Library that yada yada yada.
+A reproduction of bug in Firefox 68 that crashes FF with Marionette
 
 ## Installing
 
+Note: I have ran this repository only under MacOS, though I'm pretty sure it will work with Linux.
+
 ```sh
-npm install @applitools/ff68-scrollbarwidth-regression
+npm ci
 ```
 
-## Using the package
+## Reproducing the bug
 
-yada yada yada
+To run the reproduction, do
 
-```js
-const yadayada = require('@applitools/ff68-scrollbarwidth-regression')
-
-yada yada yada
+```sh
+npm test
 ```
 
-## API
+This will run a docker container with firefox headless, and then run a Selenium WebDriver
+(`/src/ff68-scrollbarwidth-regression.hs`) test in NodeJS that will crash Firefox.
 
-### `yadayada(yadayada, yada, [yada])`
+## How to make Firefox not crash
 
-```js
-yadaYada(yada)
-```
-
-#### `yadayada`
-
-yadayada
-
-#### `yada`
-
-yadayada
-
-#### returns
-
-yadayada
-
-#### Example
-
-```js
-yadayada(4, 5, 6) // ==> 5
-```
+1. If you set the viewport width to 1000 (in line 18, instead of the given 1920),
+   then the test won't crash.
+1. If you choose another page to navigate to (you can uncomment line 25 and comment out line 24),
+   then the test won't crash.
