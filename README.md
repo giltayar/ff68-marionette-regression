@@ -12,6 +12,8 @@ npm ci
 
 ## Reproducing the bug
 
+**Note**: prerequisites: Docker
+
 To run the reproduction, do
 
 ```sh
