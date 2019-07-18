@@ -13,7 +13,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "test": "docker run -p 4444:4444 -d selenium/standalone-firefox && npm start",
+    "test": "docker rm -fv firefox-headless; docker run --name firefox-headless -p 4444:4444 -d selenium/standalone-firefox && npm start",
     "start": "node src/ff68-scrollbarwidth-regression.js",
     "eslint": "eslint '**/*.js'"
   },
