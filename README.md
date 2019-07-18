@@ -1,4 +1,4 @@
-# ff68-scrollbarwidth-regression
+# ff68-marionette-regression
 
 A reproduction of bug in Firefox 68 that crashes FF with Marionette
 
@@ -19,7 +19,7 @@ npm test
 ```
 
 This will run a docker container with firefox headless, and then run a Selenium WebDriver
-(`/src/ff68-scrollbarwidth-regression.hs`) test in NodeJS that will crash Firefox.
+(`/src/ff68-marionette-regression.hs`) test in NodeJS that will crash Firefox.
 
 ## How to make Firefox not crash
 

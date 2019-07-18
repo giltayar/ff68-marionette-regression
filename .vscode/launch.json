@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/src/ff68-scrollbarwidth-regression.js"
+      "program": "${workspaceFolder}/src/ff68-marionette-regression.js"
     }
 
   ]
