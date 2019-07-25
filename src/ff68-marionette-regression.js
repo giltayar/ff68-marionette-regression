@@ -1,14 +1,21 @@
 'use strict'
-const fs = require('fs')
 const webdriver = require('selenium-webdriver')
 const firefox = require('selenium-webdriver/firefox')
+const logging = require('selenium-webdriver/lib/logging')
 const retry = require('p-retry')
 
 async function main() {
+  const loggingPrefs = new logging.Preferences()
+  loggingPrefs.setLevel(logging.Type.DRIVER, 'TRACE')
+  loggingPrefs.setLevel(logging.Type.SERVER, 'TRACE')
+  loggingPrefs.setLevel(logging.Type.BROWSER, 'TRACe')
+
   const builder = new webdriver.Builder()
     .forBrowser('firefox')
     .setFirefoxOptions(new firefox.Options().headless())
+    .setLoggingPrefs(loggingPrefs)
     .usingServer(`http://localhost:4444/wd/hub`)
+    .withCapabilities({browserName: 'firefox', 'moz:firefoxOptions': {log: {level: 'trace'}}})
 
   const driver = await retry(() => builder.build())
 

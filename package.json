@@ -13,8 +13,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "test:compose": "docker-compose -p ff68-bug kill; docker-compose -p ff68-bug up -d && npm start",
-    "test": "docker rm -fv firefox-headless; docker run --name firefox-headless -p 4444:4444 -d selenium/standalone-firefox && npm start",
+    "test": "docker rm -fv firefox-headless; docker run --name firefox-headless -p 4444:4444 -e DRIVER_LOGLEVEL=trace -d selenium/standalone-firefox && npm start",
     "start": "node src/ff68-marionette-regression.js",
     "eslint": "eslint '**/*.js'"
   },
