@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "docker rm -fv firefox-headless; docker run --name firefox-headless -p 4444:4444 -e DRIVER_LOGLEVEL=trace -d selenium/standalone-firefox && npm start",
+    "fix-and-test": "docker rm -fv firefox-headless; docker run --name firefox-headless -p 4444:4444 -e DRIVER_LOGLEVEL=trace --shm-size=2g -d selenium/standalone-firefox && npm start",
     "start": "node src/ff68-marionette-regression.js",
     "eslint": "eslint '**/*.js'"
   },
